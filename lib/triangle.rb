@@ -12,8 +12,7 @@ class Triangle
     raise TriangleError if l1 <= 0 || l2 <= 0 || l3 <= 0
     raise TriangleError if l1 + l2 <= l3 || l2 + l3 <= l1 || l1 + l3 <= l2
     return :equilateral if l1 == l2 && l2 == l3
-    return :isosceles if l1 == l2 || l2 == l3 || l1 == l3
-    return :scalene
+    l1 == l2 || l2 == l3 || l1 == l3 ? :isosceles : :scalene
   end
 
   class TriangleError < StandardError
